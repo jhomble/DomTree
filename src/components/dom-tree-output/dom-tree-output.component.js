@@ -155,6 +155,10 @@ class DomTreeOutputComponent extends React.Component {
           treeState.currentText = treeState.currentText.concat(char);
       }
     }
+    if (treeState.tagStack.length !== 0) {
+      alert("Tags were not closed properly");
+      treeState.error = true;
+    }
     return treeState;
   }
 
