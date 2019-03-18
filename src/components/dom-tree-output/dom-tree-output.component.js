@@ -36,10 +36,6 @@ class DomTreeOutputComponent extends React.Component {
 
   // Handles the < character in html
   handleOpen(treeState) {
-    if (treeState.inTag) {
-      alert('Double Open Tag');
-      return treeState.error = true;
-    }
     // Add file to current node if exists
     if (treeState.currentText.trim() !== '') {
       treeState.currentNode.files.push(treeState.currentText.trim());
@@ -61,7 +57,8 @@ class DomTreeOutputComponent extends React.Component {
       // Check if the stack has a matching open tag
       if (treeState.currentText.trim() !== treeState.tagStack.pop().tag.trim()) {
         alert('Tags did not match');
-        return treeState.error = true
+        treeState.error = true;
+        return;
       } else {
         treeState.currentNode = treeState.currentNode.parentNode;
       }
