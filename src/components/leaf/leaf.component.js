@@ -13,8 +13,6 @@ class LeafComponent extends React.Component {
   }
 
   render() {
-    const { open } = this.state;
-
     return (
       <div className="leaf">
         <div className="content" onClick={() => {alert(this.state.text)}}>

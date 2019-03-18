@@ -12,16 +12,13 @@ class TreeComponent extends React.Component {
         open: false, 
         color: this.props.node.tag === 'head' ? '#ff3b30' : '#0076FF'
     };
-
   }
 
   render() {
-    const { open } = this.state;
-
     return (
       <div className="tree">
         <div className="content">
-          <div className="folder-content" onClick={() => this.setState({ open: !open })}>
+          <div className="folder-content" onClick={() => this.setState({ open: !this.state.open })}>
             {this.state.open ? 
               <FontAwesomeIcon color={this.state.color} icon={['far', 'minus-square']}/> : 
               <FontAwesomeIcon color={this.state.color} icon={['far', 'plus-square']}/> 
