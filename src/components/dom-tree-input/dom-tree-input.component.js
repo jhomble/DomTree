@@ -58,7 +58,7 @@ class DomTreeInputComponent extends React.Component {
               onHide={this.modalClose}
               domTree={this.state.domInput}
             />
-           : null
+              : null
           }
         </Form>
       </div>
