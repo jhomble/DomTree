@@ -112,7 +112,7 @@ class DomTreeOutputComponent extends React.Component {
             i += 1
           } 
           // In comment
-          else if(domTreeArr[i+1] === '-' && domTreeArr[i+2] === '-') {
+          else if(domTreeArr[i+1] === '!' && domTreeArr[i+2] === '-' && domTreeArr[i+3] === '-') {
             treeState.inComment = true
             break;
           } 

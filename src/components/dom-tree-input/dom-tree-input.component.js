@@ -10,13 +10,13 @@ class DomTreeInputComponent extends React.Component {
       <head>
       </head>
       <body>
-        <Sub-body One>
+        <Sub-body>
           List One
-          <--comment-->
+          <!--comment-->
           List Two
           This is a very long file name, should truncate to ...
-        </Sub-body One>
-        <--<div>comment</div>-->
+        </Sub-body>
+        <!--<div>comment</div>-->
       </body>
       <Folder Two>
       </Folder Two>
