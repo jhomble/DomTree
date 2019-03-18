@@ -80,6 +80,10 @@ class DomTreeOutputComponent extends React.Component {
     }
   }
 
+  /*  Converts a string HTML to a tree like object
+      Iterating through each character, the state of the parsing is kept in the treeState.
+      Depending on the state and certain characters [<, >, /, \n, -], the HTML can be parsed into a reuseable object
+  */
   parseStringDomToJson(domTree) {
     let treeState = {
       inComment: false,
@@ -137,6 +141,7 @@ class DomTreeOutputComponent extends React.Component {
          break;
 
         case '-':
+        // End
           if (treeState.inComment) {
             if (domTreeArr[i+1] === '-' && domTreeArr[i+2] === '>') {
               treeState.inComment = false;
