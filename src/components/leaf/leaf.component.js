@@ -1,5 +1,4 @@
-import React, { ReactDOM, Component } from 'react';
-import { Button, Collapse } from 'react-bootstrap'
+import React from 'react';
 import './leaf.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
