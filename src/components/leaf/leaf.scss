@@ -1,0 +1,29 @@
+.leaf {
+    padding-left: 2rem;
+
+    .content {
+        padding-left: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            max-width: 250px;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .content:hover {
+        background: #0076FF;
+        color: white;
+        cursor: pointer;
+
+        svg {
+            color: white !important;
+        }
+    }
+}
