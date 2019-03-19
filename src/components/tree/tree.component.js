@@ -20,8 +20,8 @@ class TreeComponent extends React.Component {
         <div className="content">
           <div className="folder-content" onClick={() => this.setState({ open: !this.state.open })}>
             {this.state.open ?
-              <FontAwesomeIcon color={this.state.color} icon={['far', 'minus-square']} /> :
-              <FontAwesomeIcon color={this.state.color} icon={['far', 'plus-square']} />
+              <FontAwesomeIcon color="grey" icon={['far', 'minus-square']} /> :
+              <FontAwesomeIcon color="grey" icon={['far', 'plus-square']} />
             }
             &nbsp;&nbsp;
             <FontAwesomeIcon className="content-tag" color={this.state.color} icon={['far', 'folder']} />
