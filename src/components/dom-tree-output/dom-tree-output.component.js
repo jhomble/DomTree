@@ -2,6 +2,8 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import TreeComponent from '../tree/tree.component';
 import { parseStringDomToJson } from '../../util/tree-state';
+import LeafComponent from '../leaf/leaf.component.js';
+
 class DomTreeOutputComponent extends React.Component {
 
   constructor(props) {
@@ -34,9 +36,13 @@ class DomTreeOutputComponent extends React.Component {
         <Modal.Body>
           {
             treeState.error ? null :
-              <TreeComponent
-                node={treeState.currentNode}
-              />
+              <div>
+                {
+                  treeState.currentNode.children.map((node, i) => <TreeComponent key={i} node={node} />)
+                }{
+                  treeState.currentNode.files.map((text, i) => <LeafComponent key={i} text={text} />)
+                }
+              </div>
           }
         </Modal.Body>
         <Modal.Footer>

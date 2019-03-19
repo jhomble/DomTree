@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 // Creates a new empty node 
 const createNewNode = (currentNode) => {
     return {
@@ -55,7 +52,7 @@ const handleClose = (treeState) => {
 // Handles the \n character in html
 const handleNewLine = (treeState) => {
     // Create a new file
-    if (treeState.currentText.trim() != '') {
+    if (treeState.currentText.trim() !== '') {
         treeState.currentNode.files.push(treeState.currentText.trim());
         treeState.currentText = '';
     }
@@ -77,7 +74,7 @@ export const parseStringDomToJson = (domTree) => {
     }
     let domTreeArr = domTree.split('')
     let i = 0;
-    for (i; i < domTreeArr.length - 1; i++) {
+    for (i; i < domTreeArr.length; i++) {
         const char = domTreeArr[i]
         switch (char) {
             // Open Bracket
@@ -138,6 +135,10 @@ export const parseStringDomToJson = (domTree) => {
                 }
                 treeState.currentText = treeState.currentText.concat(char);
         }
+    }
+    if (treeState.currentText.trim() !== '') {
+        treeState.currentNode.files.push(treeState.currentText.trim());
+        treeState.currentText = '';
     }
     if (treeState.tagStack.length !== 0) {
         alert("Tags were not closed properly");
