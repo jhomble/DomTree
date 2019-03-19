@@ -15,8 +15,7 @@ class LeafComponent extends React.Component {
         return (
             <div className="leaf">
                 <div className="content" onClick={() => { alert(this.state.text) }}>
-                    <FontAwesomeIcon color="#0076FF" icon={['far', 'file']} />
-                    &nbsp;&nbsp;<p>{this.state.text}</p>
+                    <p><FontAwesomeIcon color="#0076FF" icon={['far', 'file']} />&nbsp;&nbsp;{this.state.text}</p>
                 </div>
             </div>
         );
